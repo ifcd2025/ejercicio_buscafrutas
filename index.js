@@ -62,7 +62,7 @@ function mostrarFrutas(datos) {
     }
 }
 
-Rosaceae
+
 
 
 function mostrarErrores(errores) {
