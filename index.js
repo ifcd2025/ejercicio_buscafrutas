@@ -62,12 +62,13 @@ function mostrarFrutas(datos) {
     }
 }
 
-
-
-
 function mostrarErrores(errores) {
-    console.log(errores);
+    const erroresDialog = document.getElementById("mensajes");
+    document.getElementById("mensaje").textContent = errores;
+    erroresDialog.showModal();
 }
 
 document.getElementById("buscar").addEventListener("click", buscarFrutas);
+document.getElementById("cerrar").addEventListener("click", 
+    () => document.getElementById("mensajes").close());
 
