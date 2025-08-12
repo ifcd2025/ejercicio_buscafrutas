@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Ejercicio frutas</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+        header {
+            background-color: tomato;
+            /* mantenemos siempre el encabezado arriba aunque hagamos scroll*/
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.466);
+        }
+    </style>
+    <script type="module" src="index.js"></script>
+</head>
+<body>
+    <header class="text-center text-white text-uppercase p-2">
+        <h1>🍊🍍🍎 busca frutas 🍎🍍🍊</h1>
+    </header>
+    <main class="bg-success-subtle">
+        <!-- En este ejercicio como no hay submit y los datos los enviamos
+         nosotros con ajax, no haría falta un formulario-->
+        <form class="w-50 bg-white rounded-3 shadow mx-auto my-2 p-2">
+            <label for="familia">Familia</label>
+            <input type="text" id="familia" name="familia" class="form-control mb-2">
+            <label for="categoria">Valor Nutricional</label>
+            <select name="categoria" id="categoria" class="form-select">
+                <option value="calories">Calorías</option>
+                <option value="fat">Grasas</option>
+                <option value="sugar">Azúcares</option>
+                <option value="carbohidrates">Carborhidratos</option>
+                <option value="proteins">Proteínas</option>
+            </select>
+            <label for="valorNutricionalMinimo">Valor nutricional mínimo (0 a 1000)</label>
+            <input type="number" name="valorNutricionalMinimo" id="valorNutricionalMinimo"
+                min="0" max="1000" class="form-control w-25 mb-2">
+            <label for="valorNutricionalMaximo">Valor nutricional máximo (0 a 1000)</label>
+            <input type="number" name="valorNutricionalMaximo" id="valorNutricionalMaximo"
+                min="0" max="1000" class="form-control w-25 mb-2">
+            <input type="radio" id="porFamilia" name="buscarPor">
+            <label for="porFamilia">Familia</label>
+            <input type="radio" id="porValorNutricional" name="buscarPor">
+            <label for="porValorNutricional">Valor nutricional</label>
+            <input type="button" id="buscar" name="buscar" value="buscar" 
+                class="btn btn-success ms-auto me-0 d-block">
+        </form>
+        <div id="resultados" class="m-auto d-flex flex-wrap gap-2 justify-content-center">
+
+        </div>
+    </main>
+    <div id="clon" class="fruta rounded-1 shadow bg-warning-subtle p-2 d-none">
+        <h2 class="text-danger fw-bold h3">GreenApple</h2>
+        <h3 class="h4">Rosaceae</h3>
+        <!-- no vamos a crear estilos para estas clases, pero las vamos a usar
+         en JS para seleccionar de modo más fácil los elementos -->
+        <div class="calorias">21</div>
+        <div class="grasa">0.1</div>
+        <div class="azucares">6.4</div>
+        <div class="carbohidratos">3.1</div>
+        <div class="proteinas">0.5</div>
+    </div>
+</body>
+</html>
